@@ -1,7 +1,17 @@
 /* Constants */
+:root {
+  --mainColor: #f3f3f3;
+  --textColor: #333333;
+  --padding: 100px;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--mainColor);
+  color: var(--textColor);
 }
