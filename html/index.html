@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
     <title>Илья Коптев</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- Header 
@@ -17,12 +18,24 @@
         </div>
         <nav class="nav">
           <ul class="nav__items">
-            <li class="nav__link"><a href="#">Главная</a></li>
-            <li class="nav__link"><a href="#">Обо мне</a></li>
-            <li class="nav__link"><a href="#">Достижения</a></li>
-            <li class="nav__link"><a href="#">Услуги</a></li>
-            <li class="nav__link"><a href="#">Отзывы</a></li>
-            <li class="nav__link"><a href="#">Контакты</a></li>
+            <li class="nav__link" data-goto=".intro">
+              <a href="#">Главная</a>
+            </li>
+            <li class="nav__link" data-goto=".about">
+              <a href="#">Обо мне</a>
+            </li>
+            <li class="nav__link" data-goto=".achievements">
+              <a href="#">Достижения</a>
+            </li>
+            <li class="nav__link" data-goto=".services">
+              <a href="#">Услуги</a>
+            </li>
+            <li class="nav__link" data-goto=".reviews">
+              <a href="#">Отзывы</a>
+            </li>
+            <li class="nav__link" data-goto=".form">
+              <a href="#">Контакты</a>
+            </li>
             <li class="nav__link"><a href="#">Реквизиты</a></li>
           </ul>
         </nav>
@@ -576,54 +589,8 @@
             </p>
           </div>
         </div>
-        <div class="reviews__item" data="hiden">
-          <div class="reviews__author">
-            <div>
-              <img src="../img/review.jpg" alt="" />
-            </div>
-            <div>
-              <p class="author__name">Илья Коптев</p>
-              <p>Бизнес-тренер</p>
-            </div>
-          </div>
-          <div class="reviews__text">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Molestiae reprehenderit repellat voluptatum numquam, error nemo
-              quam vero consequuntur quae modi harum eaque nobis nisi
-              repellendus facilis omnis velit libero nulla. Qui esse quisquam
-              alias doloribus temporibus exercitationem placeat earum magni
-              architecto ad. Id odit debitis minus voluptatum porro eveniet
-              fugit. Laboriosam, harum itaque animi et quis tempora neque
-              consequatur sed.
-            </p>
-          </div>
-        </div>
-        <div class="reviews__item" data="hiden">
-          <div class="reviews__author">
-            <div class="author__logo">
-              <img src="../img/review.jpg" alt="" />
-            </div>
-            <div>
-              <p class="author__name">Илья Коптев</p>
-              <p>Директор</p>
-            </div>
-          </div>
-          <div class="reviews__text">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Molestiae reprehenderit repellat voluptatum numquam, error nemo
-              quam vero consequuntur quae modi harum eaque nobis nisi
-              repellendus facilis omnis velit libero nulla. Qui esse quisquam
-              alias doloribus temporibus exercitationem placeat earum magni
-              architecto ad. Id odit debitis minus voluptatum porro eveniet
-              fugit. Laboriosam, harum itaque animi et quis tempora neque
-              consequatur sed.
-            </p>
-          </div>
-        </div>
       </div>
-      <button class="review__button">Больше отзывов</button>
+      <button class="loading__button">Больше отзывов</button>
     </div>
 
     <!-- Gallery 
@@ -631,10 +598,100 @@
 
     <div class="gallery">
       <h3 class="general__title">Галерея</h3>
+      <div class="gallery__inner">
+        <div class="gallery__item">
+          <img src="../img/Gallery/1.png" alt="" />
+        </div>
+        <div class="gallery__item">
+          <img src="../img/Gallery/2.png" alt="" />
+        </div>
+        <div class="gallery__item">
+          <img src="../img/Gallery/3.png" alt="" />
+        </div>
+        <div class="gallery__item">
+          <img src="../img/Gallery/3.png" alt="" />
+        </div>
+        <div class="gallery__item">
+          <img src="../img/Gallery/2.png" alt="" />
+        </div>
+        <div class="gallery__item">
+          <img src="../img/Gallery/1.png" alt="" />
+        </div>
+
+        <!-- Hidden images ================================================================= -->
+        <div class="gallery__item d-none">
+          <img id="hideImg" src="../img/Gallery/1.png" alt="" />
+        </div>
+        <div class="gallery__item d-none">
+          <img id="hideImg" src="../img/Gallery/2.png" alt="" />
+        </div>
+        <div class="gallery__item d-none">
+          <img id="hideImg" src="../img/Gallery/3.png" alt="" />
+        </div>
+      </div>
+      <button id="img__button" class="loading__button">Загрузить ещё</button>
+    </div>
+
+    <!-- Form 
+=========================== -->
+
+    <div class="form">
+      <h3 class="form__title">Остались вопросы?</h3>
       <div class="container">
-        <div class="gallery__inner"></div>
+        <div class="form__block">
+          <p class="form__subtitle">
+            Введите данные, мы свяжемся в течение некоторого времени для
+            уточнения деталей:
+          </p>
+          <div class="form_inner">
+            <form action="">
+              <div class="form_inner">
+                <p>Введите Ваше имя:</p>
+                <input type="text" placeholder="Введите имя" required />
+                <p>Выберите удобный способ связи:</p>
+                <div class="form_choice">
+                  <ul>
+                    <li class="call selected">Звонок</li>
+                    <li class="whatsapp">WhatsApp</li>
+                    <li class="telegram">Telegram</li>
+                  </ul>
+                </div>
+                <p class="choice__area">Введите Ваш номер телефона:</p>
+                <input type="tel" placeholder="+7 (___)-___-__-__" />
+              </div>
+              <div class="form_inner">
+                <p>Сообщение:</p>
+                <textarea
+                  class="input_message"
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Кратко опишите ваш вопрос (необязательно)"
+                ></textarea>
+              </div>
+              <div class="form_submit">
+                <button type="submit" class="form_btn--send">
+                  Отправить заявку
+                </button>
+
+                <button type="reset" class="form_btn--clear">Очистить</button>
+              </div>
+              <div class="policy_item">
+                Отправляя заявку, Вы принимаете
+                <a href="policy.html" target="_blank"
+                  >Положение и<br />
+                  Согласие</a
+                >
+                на обработку персональных данных.
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script src="https://unpkg.com/imask"></script>
     <script src="../js/app.js"></script>
   </body>
 </html>
