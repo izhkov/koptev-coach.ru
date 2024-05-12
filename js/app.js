@@ -1,5 +1,4 @@
 // Burger Menu
-
 const nav = document.querySelector('.nav')
 const navBurger = document.querySelector('.nav__burger')
 
@@ -9,7 +8,6 @@ navBurger.addEventListener('click', () => {
 })
 
 // Concept Buttons and Text
-
 const leftText = [
   '<span>Только с теми</span>, кто хочет развиваться',
   '<span>Моя цель</span> - помочь клиентам стать более осознанными',
@@ -43,13 +41,12 @@ buttons.addEventListener('click', (e) => {
 })
 
 // Lazy Loading Reviews
-
 const reviews = document.querySelectorAll('.reviews__item')
 const loadingButton = document.querySelector('.loading__button')
 
 let count = reviews.length
 let start = 2
-let show = 4
+let show = 2
 
 loadingButton.addEventListener('click', (e) => {
   e.preventDefault()
@@ -70,7 +67,6 @@ loadingButton.addEventListener('click', (e) => {
 })
 
 // Lazy Loading Images
-
 const allImages = document.querySelectorAll('.gallery__item')
 const loadImgButton = document.querySelector('#img__button')
 
@@ -97,7 +93,6 @@ loadImgButton.addEventListener('click', (e) => {
 })
 
 // Form
-
 const formChoice = document.querySelector('.form_choice')
 const choiceItems = document.querySelectorAll('.form_choice ul li')
 const choiceArea = document.querySelector('.choice__area')
@@ -113,7 +108,6 @@ formChoice.addEventListener('click', (e) => {
 })
 
 // Input Phone Mask
-
 const formBtn = document.querySelector('.form_btn--send')
 
 const phoneMask = new IMask(phoneInput, {
@@ -128,7 +122,6 @@ phoneInput.addEventListener('input', () => {
 })
 
 // Smooth Scroll with JQuery :-/
-
 $(function () {
   $('[data-goto]').on('click', function (event) {
     event.preventDefault()
@@ -146,3 +139,8 @@ $(function () {
     )
   })
 })
+
+// Footer Date
+const footerCopyright = document.querySelector('.footer__copyright')
+const fullYear = new Date().getFullYear()
+footerCopyright.textContent = `© ${fullYear}`
