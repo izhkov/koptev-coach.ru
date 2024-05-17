@@ -133,6 +133,7 @@ body {
 }
 
 .nav ul li {
+  display: none;
   margin-left: 40px;
   text-transform: uppercase;
 }
@@ -247,9 +248,12 @@ body {
 ==================================*/
 
 .intro {
+  width: 100%;
   background-image: url(../img/mainPhoto.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
+
+  background-position: top;
+  background-size: cover;
 }
 
 .intro__title {
@@ -397,6 +401,7 @@ body {
   width: 100%;
   max-width: 1720px;
   margin: 0 auto;
+  padding: 0 25px;
   border-radius: 30px;
 }
 
@@ -404,6 +409,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .achievements__item {
@@ -443,14 +449,19 @@ body {
 /* Clients 
 ==================================*/
 .clients__inner {
-  padding-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  margin: 0 auto;
 }
 
 .clients__logo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  min-width: 33.33333%;
   padding-bottom: 50px;
+  margin: 0 auto;
 }
 
 /* Services 
@@ -635,6 +646,7 @@ body {
 
 .worth {
   background-image: url(../img/oportunities.jpg);
+  background-position: top;
   background-size: auto;
   background-repeat: no-repeat;
 }
@@ -694,6 +706,7 @@ body {
 .reviews {
   width: 100%;
   max-width: 1720px;
+  padding: 0 25px;
   margin: 0 auto;
 }
 
@@ -757,7 +770,13 @@ body {
 }
 
 .reviews__author .author__name {
+  font-size: 22px;
   font-weight: 600;
+}
+
+.reviews__author .author__work {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .loading__button {
@@ -791,14 +810,37 @@ body {
 
 .gallery__inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   padding-bottom: 50px;
 }
 
 .gallery__item {
-  margin-top: 33px;
+  max-width: 45%;
+  margin: 25px 5px 5px 5px;
   animation: ani 0.2s linear;
+  cursor: pointer;
+  transition: 0.1s linear;
+}
+
+.gallery__item h3 {
+  font-size: 18px;
+  color: var(--textColor);
+  text-align: center;
+}
+
+.text__black {
+  color: var(--textColor);
+}
+
+.gallery__item.active {
+  transform: scale(1.5);
+}
+
+.gallery__item img {
+  width: 100%;
+  border-radius: 5px;
 }
 
 .gallery__item.d-none {
@@ -809,10 +851,11 @@ body {
 ==================================*/
 
 .form {
+  width: 100%;
   background-image: url(../img/formPhoto.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
-  margin-top: 50px;
+  background-size: cover;
+  margin: 50px auto 0 auto;
   padding-bottom: 190px;
 }
 
@@ -1114,6 +1157,7 @@ form .form_btn--clear:active {
   max-width: 1720px;
   height: 175px;
   margin: 0 auto;
+  padding: 0 25px;
 }
 
 .footer__name {
@@ -1144,4 +1188,627 @@ form .form_btn--clear:active {
 
 .footer__social a:first-child {
   margin-right: 25px;
+}
+
+/* Media 
+============================ */
+
+@media (max-width: 1366px) {
+  /* Intro 
+==================================*/
+
+  .general__title {
+    font-size: 45px;
+  }
+
+  .intro__title {
+    font-size: 180px;
+    margin-left: 80px;
+  }
+
+  .intro__subtitle {
+    margin-left: 90px;
+    font-size: 28px;
+  }
+
+  .intro__button {
+    width: 400px;
+    padding: 25px 0;
+    font-size: 20px;
+    margin-left: 80px;
+  }
+
+  /* About 
+==================================*/
+
+  .about-education__subtitle {
+    font-size: 22px;
+  }
+
+  .year {
+    font-size: 22px;
+  }
+
+  .institution {
+    font-size: 20px;
+  }
+
+  .special {
+    font-size: 20px;
+  }
+
+  .about-upgrade__subtitle {
+    font-size: 22px;
+  }
+
+  /* Achievements 
+==================================*/
+
+  .achievements__item {
+    min-width: 380px;
+  }
+
+  .item__title {
+    font-size: 180px;
+  }
+
+  .item__title-2 {
+    font-size: 130px;
+  }
+
+  .item__description {
+    font-size: 20px;
+  }
+
+  /* Services 
+==================================*/
+
+  .services__text {
+    font-size: 34px;
+  }
+
+  .services__button {
+    padding: 20px 0;
+    width: 380px;
+    font-size: 20px;
+  }
+
+  /* Concept 
+==================================*/
+
+  .button__block {
+    font-size: 30px;
+  }
+
+  .button__text-1 {
+    padding: 15px 80px;
+  }
+
+  .button__text-2 {
+    padding: 15px 80px;
+  }
+
+  .concept__text p {
+    font-size: 26px;
+  }
+
+  .concept__number {
+    width: 70px;
+    height: 70px;
+    font-size: 38px;
+  }
+
+  .concept__number-2 {
+    width: 70px;
+    height: 70px;
+    font-size: 38px;
+  }
+
+  /* Worth 
+==================================*/
+
+  .worth__item-1 {
+    margin-left: 600px;
+    font-size: 30px;
+  }
+
+  .worth__item-1 p {
+    font-size: 18px;
+  }
+
+  .worth__item-2 {
+    margin-left: 650px;
+    font-size: 30px;
+  }
+
+  .worth__item-2 p {
+    font-size: 18px;
+  }
+
+  .worth__item-3 {
+    margin-left: 700px;
+    font-size: 30px;
+  }
+
+  .worth__item-3 p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro__title {
+    font-size: 140px;
+  }
+
+  .intro__subtitle {
+    font-size: 22px;
+  }
+
+  /* Concept 
+==================================*/
+
+  .button__block {
+    font-size: 22px;
+  }
+
+  .general__title {
+    padding-top: 20px;
+  }
+
+  /* Worth 
+==================================*/
+
+  .worth__item-1 {
+    font-size: 24px;
+    margin-left: 420px;
+  }
+
+  .worth__item-1 p {
+    font-size: 16px;
+  }
+
+  .worth__item-2 {
+    font-size: 24px;
+    margin-left: 450px;
+  }
+
+  .worth__item-2 p {
+    font-size: 16px;
+  }
+
+  .worth__item-3 {
+    font-size: 24px;
+    margin-left: 500px;
+  }
+
+  .worth__item-3 p {
+    font-size: 16px;
+  }
+
+  /* Reviews 
+==================================*/
+
+  .reviews__text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 940px) {
+  /* Navigation 
+==================================*/
+
+  .nav {
+    max-width: 100%;
+    height: fit-content;
+  }
+
+  .nav ul {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  .nav a {
+    font-size: 22px;
+  }
+
+  .nav ul li {
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .nav ul li a:hover::after {
+    width: 0;
+  }
+
+  .nav ul li a:hover {
+    color: var(--textColor);
+  }
+
+  /* Intro 
+==================================*/
+
+  .intro {
+    background-position: 92% 8%;
+  }
+
+  .intro__title {
+    font-size: 80px;
+    padding-top: 100px;
+    line-height: 0.9;
+  }
+
+  .intro__subtitle {
+    font-size: 14px;
+    margin-left: 85px;
+  }
+
+  .intro__button {
+    /* display: block; */
+    width: 300px;
+    padding: 20px 0;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 50px;
+  }
+
+  /* About 
+==================================*/
+
+  .education__item {
+    padding: 10px;
+  }
+
+  .upgrade__item {
+    padding: 10px;
+  }
+
+  .about-upgrade__inner img {
+    width: 60%;
+  }
+
+  .about-upgrade__inner {
+    align-items: end;
+  }
+
+  /* Achievements 
+==================================*/
+
+  .achievements__block {
+    justify-content: center;
+  }
+
+  /* Clients 
+==================================*/
+
+  .clients__logo img {
+    width: 70%;
+  }
+
+  /* Services 
+==================================*/
+
+  .services {
+    background-position: 65%;
+  }
+
+  .services__text {
+    font-size: 30px;
+  }
+
+  .services__text .item-1 {
+    margin-left: 200px;
+  }
+
+  .services__text .item-2 {
+    margin-left: 100px;
+  }
+
+  .services__text .item-3 {
+    margin-left: 10px;
+  }
+
+  /* Concept 
+==================================*/
+
+  .button__block {
+    font-size: 16px;
+  }
+
+  .button__text-1 {
+    padding: 15px 20px;
+  }
+
+  .button__text-2 {
+    padding: 15px 20px;
+  }
+
+  .concept__text p {
+    font-size: 20px;
+  }
+
+  /* Worth 
+==================================*/
+  .worth {
+    background-color: #cac4bc;
+    background-image: none;
+  }
+
+  .worth__item-1 {
+    margin: 30px 0 0 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  .worth__item-2 {
+    margin: 30px 0 0 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  .worth__item-3 {
+    margin: 30px 0 0 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  /* Reviews 
+==================================*/
+
+  .reviews__item {
+    width: 100%;
+  }
+
+  /* Gallery 
+==================================*/
+
+  .gallery__item {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 430px) {
+  .general__title {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .intro {
+    background-position: 90%;
+  }
+
+  .intro__button {
+    width: 300px;
+    margin: 50px 10px;
+  }
+
+  .intro__title {
+    font-size: 35px;
+    padding-top: 200px;
+    position: relative;
+    top: -110px;
+    margin: 0;
+  }
+
+  .intro__subtitle {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 500;
+    position: relative;
+    top: -250px;
+    text-align: center;
+    left: 20px;
+  }
+
+  /* About 
+==================================*/
+
+  .about-education__subtitle {
+    font-size: 16px;
+    margin-top: 40px;
+  }
+
+  .year {
+    font-size: 18px;
+  }
+
+  .institution {
+    font-size: 14px;
+  }
+
+  .special {
+    font-size: 14px;
+  }
+
+  .about-upgrade__subtitle {
+    font-size: 16px;
+    margin-top: 40px;
+  }
+
+  .about-upgrade__inner img {
+    display: none;
+  }
+
+  /* Achievements 
+==================================*/
+
+  .achievements__item {
+    min-width: 250px;
+    margin-top: 50px;
+  }
+
+  .item__title {
+    font-size: 100px;
+  }
+
+  .item__title-2 {
+    font-size: 50px;
+  }
+
+  .item__description {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .achievements__block {
+    padding-bottom: 100px;
+  }
+
+  /* Services 
+==================================*/
+
+  .services {
+    background-image: none;
+    background-color: #aca298;
+  }
+
+  .services__text {
+    font-size: 34px;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .services__text .item-1 {
+    margin: 0;
+    padding-bottom: 30px;
+  }
+  .services__text .item-2 {
+    margin: 0;
+    padding-bottom: 30px;
+  }
+  .services__text .item-3 {
+    margin: 0;
+    padding-bottom: 30px;
+  }
+
+  .services__button {
+    width: 300px;
+    margin: 50px 10px;
+    font-size: 16px;
+  }
+
+  /* Concept 
+==================================*/
+
+  .button__block {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .concept__text {
+    display: block;
+  }
+
+  .button__text-1 {
+    padding: 15px 10px;
+    text-align: center;
+  }
+
+  .button__text-2 {
+    padding: 15px 10px;
+    text-align: center;
+  }
+
+  .concept__text p {
+    font-size: 18px;
+    margin: 15px 0 0 0;
+    text-align: center;
+  }
+
+  .concept__number {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .concept__number-2 {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .loading__button {
+    width: 200px;
+    font-size: 14px;
+    padding: 15px 25px;
+  }
+
+  /* Gallery 
+==================================*/
+
+  .gallery__item h3 {
+    font-size: 14px;
+  }
+
+  /* Form 
+==================================*/
+
+  .form {
+    padding-bottom: 100px;
+  }
+
+  .form__subtitle {
+    font-size: 16px;
+    padding: 20px 40px;
+  }
+
+  .form_inner {
+    padding: 0;
+  }
+
+  .form_inner p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .form_inner input {
+    display: block;
+    width: 250px;
+    margin: 10px auto 40px auto;
+  }
+
+  .form_choice ul li {
+    padding: 15px 15px;
+    font-size: 14px;
+  }
+
+  textarea {
+    display: block;
+    width: 250px;
+    margin: 10px auto 40px auto;
+  }
+
+  form .form_btn--send {
+    width: 250px;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+
+  /* Footer 
+==================================*/
+
+  .footer__inner {
+    display: block;
+  }
+
+  .footer__name {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .footer__copyright {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .footer__social {
+    justify-content: center;
+    margin-top: 20px;
+  }
 }

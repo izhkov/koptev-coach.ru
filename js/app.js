@@ -1,10 +1,19 @@
 // Burger Menu
 const nav = document.querySelector('.nav')
+const navLinks = document.querySelectorAll('.nav__link')
 const navBurger = document.querySelector('.nav__burger')
 
 navBurger.addEventListener('click', () => {
   nav.classList.toggle('active')
   navBurger.classList.toggle('active')
+
+  navLinks.forEach((item) => {
+    if (navBurger.classList.contains('active')) {
+      item.style.display = 'block'
+    } else {
+      item.style.display = 'none'
+    }
+  })
 })
 
 // Concept Buttons and Text
@@ -71,8 +80,8 @@ const allImages = document.querySelectorAll('.gallery__item')
 const loadImgButton = document.querySelector('#img__button')
 
 let countImages = allImages.length
-let startImages = 3
-let showImages = 6
+let startImages = 4
+let showImages = 4
 
 loadImgButton.addEventListener('click', (e) => {
   e.preventDefault()
@@ -91,6 +100,25 @@ loadImgButton.addEventListener('click', (e) => {
     }
   }
 })
+
+const galleryItems = document.querySelectorAll('.gallery__item')
+
+galleryItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    if (!item.classList.contains('active')) {
+      clearAllClasses()
+      item.classList.add('active')
+    } else {
+      clearAllClasses()
+    }
+  })
+})
+
+const clearAllClasses = () => {
+  galleryItems.forEach((item) => {
+    item.classList.remove('active')
+  })
+}
 
 // Form
 const formChoice = document.querySelector('.form_choice')
@@ -127,6 +155,10 @@ $(function () {
     event.preventDefault()
     navBurger.classList.remove('active')
     nav.classList.remove('active')
+
+    navLinks.forEach((item) => {
+      item.style.display = 'none'
+    })
 
     let elementId = $(this).data('goto')
     let elementOffset = $(elementId).offset().top
