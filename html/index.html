@@ -36,9 +36,6 @@
             <li class="nav__link" data-goto=".gallery">
               <a href="#">Галерея</a>
             </li>
-            <li class="nav__link">
-              <a href="#">Контакты</a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -46,12 +43,14 @@
 
     <!-- Intro 
 =========================== -->
-    <div class="intro">
+    <div class="intro animItems anim-no-hide">
       <div class="container">
         <div class="intro__inner">
-          <h1 class="intro__title">Илья<br />Коптев</h1>
-          <h2 class="intro__subtitle">Бизнес-тренер, коуч, психолог</h2>
-          <button class="intro__button" data-goto=".form">
+          <h1 class="intro__title animItems anim-no-hide">Илья<br />Коптев</h1>
+          <h2 class="intro__subtitle animItems anim-no-hide">
+            Бизнес-тренер, коуч, психолог
+          </h2>
+          <button class="intro__button animItems" data-goto=".form">
             Записаться на консультацию
           </button>
         </div>
@@ -66,7 +65,7 @@
         <div class="about__inner">
           <h3 class="general__title">Обо мне</h3>
           <h4 class="about-education__subtitle">Образование</h4>
-          <div class="about-education__inner">
+          <div class="about-education__inner animItems anim-no-hide">
             <div class="education__item">
               <p class="year">2013</p>
               <p class="institution">
@@ -106,7 +105,7 @@
           <h4 class="about-upgrade__subtitle">
             Повышение квалификации и навыки
           </h4>
-          <div class="about-upgrade__inner">
+          <div class="about-upgrade__inner animItems anim-no-hide">
             <img src="../img/aboutPhoto.png" alt="aboutPhoto" />
             <div>
               <div class="upgrade__item">
@@ -163,7 +162,7 @@
           <h3 class="general__title">Мои достижения</h3>
           <div class="achievements__block">
             <div>
-              <div class="achievements__item">
+              <div class="achievements__item animItems anim-no-hide">
                 <p class="item__title">10</p>
               </div>
               <p class="item__description">
@@ -172,7 +171,7 @@
               </p>
             </div>
             <div>
-              <div class="achievements__item">
+              <div class="achievements__item animItems anim-no-hide">
                 <p class="item__title-2">15 000+</p>
               </div>
               <p class="item__description">
@@ -182,7 +181,7 @@
           </div>
           <div class="achievements__block">
             <div>
-              <div class="achievements__item">
+              <div class="achievements__item animItems anim-no-hide">
                 <p class="item__title-2">5 000+</p>
               </div>
               <p class="item__description">
@@ -191,7 +190,7 @@
               </p>
             </div>
             <div>
-              <div class="achievements__item">
+              <div class="achievements__item animItems anim-no-hide">
                 <p class="item__title">7</p>
               </div>
               <p class="item__description">
@@ -239,21 +238,26 @@
       <div class="container">
         <div class="services__inner">
           <div class="services__text">
-            <h5 class="item-1">
+            <h5 class="item-1 animItems anim-no-hide">
               Коучинг<span>
                 для<br />
                 вашей компании</span
               >
             </h5>
-            <h5 class="item-2">
+            <h5 class="item-2 animItems anim-no-hide">
               Командные<span>
                 и<br />
                 персональные сессии</span
               >
             </h5>
-            <h5 class="item-3">Консультация<span> психолога</span></h5>
+            <h5 class="item-3 animItems anim-no-hide">
+              Консультация<span> психолога</span>
+            </h5>
           </div>
-          <button class="services__button" data-goto=".form">
+          <button
+            class="services__button animItems anim-no-hide"
+            data-goto=".form"
+          >
             Оставить заявку
           </button>
         </div>
@@ -482,7 +486,8 @@
               осознанно почувствовать ответственность и принять решение, что
               значительно сокращало рефлексию и прокрастинацию. Илья по
               темпераменту мой антипод, но именно его качества личности стали
-              примеромдля меня в тяжелые периоды, где моя философия давала сбой.
+              примером для меня в тяжелые периоды, где моя философия давала
+              сбой.
             </p>
           </div>
         </div>
@@ -654,9 +659,7 @@
                 ></textarea>
               </div>
               <div class="form_submit">
-                <button type="submit" class="form_btn--send">
-                  Отправить заявку
-                </button>
+                <button type="submit" class="form_btn--send">Отправить</button>
 
                 <button type="reset" class="form_btn--clear">Очистить</button>
               </div>
